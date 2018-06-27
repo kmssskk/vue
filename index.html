@@ -1,0 +1,46 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="app">
+ <p>{{ message }}</p>
+ <button @click="showAlert()">
+   CLICK!
+ </button>
+ <ul>
+   <li v-for="item in items">{{ item.message }}</li>
+ </ul>
+ 
+ <h1 v-if="ok">
+   YES
+ </h1>
+ <h1 v-else> 
+   NO
+ </h1>
+ <h1 v-bind:message="data"></h1>
+</div>
+
+<div id="example-1">
+ <button v-on:click="counter += 1">
+ CLICK!
+ </button>
+ <p>
+ 위 버튼을 클릭한 횟수는 {{ counter }} 번 입니다. 
+ </p>
+ <a @click="doSomething()">클릭</a>
+</div>
+
+<div id="example-2">
+  <p>
+  {{ message }}
+  </p>
+  <input v-model="message">
+</div>
+
+<div id="example-3">
+  <input type="checkbox" id="jack" value="Jack" v-on:input="check">
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John" v-on:input="check">
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike" v-on:input="check">
+  <label for="mike">Mike</label>
+  
+  <p>체크한 이름 : {{ checkedNames }}</p>
+</div>
