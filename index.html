@@ -1,3 +1,40 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by anonymous (http://jsbin.com/pixuvodebi/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<style id="jsbin-css">
+body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+}
+
+div {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+  margin-bottom:5px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+del {
+  color: rgba(0, 0, 0, 0.3);
+}
+</style>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <div id="app">
  <p>{{ message }}</p>
@@ -44,3 +81,60 @@
   
   <p>체크한 이름 : {{ checkedNames }}</p>
 </div>
+
+<script id="jsbin-javascript">
+new Vue({
+  el: "#app",
+  data: {
+    message :  'Hello Veu.js!!',
+    counter : 0,
+    items : [
+    	{ message : 'Foo' },
+      { message : 'Bar' }
+    ],
+    ok : false
+  },
+  methods: {
+  	showAlert(){
+    	alert('Hi~')
+    }
+  },
+  created(){
+  	this.message = '안녕 Vue.js!'
+  }
+})
+
+var example1 = new Vue({
+	el : '#example-1',
+  data : {
+  	counter : 0
+  },
+  methods : {
+  	doSomething(){
+    	alert('dddddddd')
+    }
+  }
+})
+
+var example2 = new Vue({
+	el : '#example-2',
+  data : {
+  	message : 'Hello'
+  },
+  created() {
+  	this.message = 'Hello Vue!!!!' 
+  }
+})
+
+var example3 = new Vue({
+	el : '#example-3',
+  data : {
+  	checkedNames : ''
+  },
+  methods : {
+  	check(e){
+    	this.checkedNames += ','+e.target.value
+    }
+  }
+})
+</script>
